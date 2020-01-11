@@ -1,0 +1,99 @@
+{
+	"title": "Aplicación transaccional de Parranderos Uniandes",
+	"frameH": 600,
+	"frameW": 800,
+	"bannerPath": "./src/main/resources/config/logo.png",
+	"menuBar":
+	[
+		{ "menuTitle": "Hotel",
+		  "options":
+			[
+				{
+					"label": "Reservar Habitación",
+					"event": "reservarHabitacion"
+				},
+				{
+					"label": "Reservar Servicio",
+					"event": "reservarServicio"
+				},
+				{
+					"label": "CheckIn",
+					"event": "checkIn"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarTipoBebidaPorNombre"
+				},
+				{
+					"label": "CheckOut",
+					"event": "checkOut"
+				}
+			]
+		},
+		{ "menuTitle": "Iteración 2",
+		  "options":
+			[
+				{
+					"label": "Reservar",
+					"event": "reservar"
+				},
+				{
+					"label": "Cancelar Reserva",
+					"event": "cancelarReserva"
+				},
+				{
+					"label": "Finalizar Reserva",
+					"event": "finConvencion"
+				},
+				{
+					"label": "Inicio Mantenimiento",
+					"event": "registrarIniMan"
+				},
+				{
+					"label": "Fin Mantenimiento",
+					"event": "registrarFinMan"
+				}
+			]
+		},		
+		{ "menuTitle": "Documentación",
+		  "options":
+			[
+				{
+					"label": "Presentación general",
+					"event": "mostrarPresentacionGeneral"
+				},
+				{
+					"label": "Modelo conceptual",
+					"event": "mostrarModeloConceptual"
+				},
+				{
+					"label": "Esquema de la BD",
+					"event": "mostrarEsquemaBD"
+				},
+				{
+					"label": "Script creación de la BD",
+					"event": "mostrarScriptBD"
+				},
+				{
+					"label": "Arquitectura de referencia",
+					"event": "mostrarArqRef"
+				},
+				{
+					"label": "Javadoc Parranderos",
+					"event": "mostrarJavadoc"
+				}
+			]
+		},		
+		{ "menuTitle": "Acerca de ...",
+		  "options":
+			[
+				{
+					"label": "Acerca de ...",
+					"event": "acercaDe"
+				}
+			]
+		}		
+		
+	]
+}
+	

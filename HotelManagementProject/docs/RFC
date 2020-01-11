@@ -1,0 +1,149 @@
+--RFC10
+    --Cualquiera
+SELECT cliente.*,b.fechaUso
+FROM cliente LEFT OUTER JOIN (
+SELECT *
+FROM servicioAdicional
+WHERE  fechaUso BETWEEN TO_DATE('22/Marzo/2018','DD/MON/YY') AND TO_DATE('23/Abril/2018','DD/MON/YY'))b
+ON cliente.id = b.id_cliente
+WHERE b.costo is null;
+
+    --Organizador
+    SELECT cliente.*,b.fechaUso
+FROM cliente LEFT OUTER JOIN (
+SELECT *
+FROM servicioAdicional
+WHERE  fechaUso BETWEEN TO_DATE('22/Marzo/2018','DD/MON/YY') AND TO_DATE('23/Abril/2018','DD/MON/YY')
+AND servicioAdicional.reserva = 9)b
+ON cliente.id = b.id_cliente
+WHERE b.costo is null;
+--RFC9
+    --Cualquiera
+SELECT DISTINCT cliente.*
+FROM cliente,servicioAdicional
+WHERE  fechaUso BETWEEN TO_DATE('22/Marzo/2018','DD/MON/YY') AND TO_DATE('23/Abril/2018','DD/MON/YY')
+AND cliente.id = servicioAdicional.id_Cliente;
+
+    --Organizador
+SELECT DISTINCT cliente.*
+FROM cliente,servicioAdicional
+WHERE  fechaUso BETWEEN TO_DATE('22/Marzo/2018','DD/MON/YY') AND TO_DATE('23/Abril/2018','DD/MON/YY')
+AND cliente.id = servicioAdicional.id_Cliente
+AND servicioAdicional.reserva = 9; 
+
+CREATE INDEX prueba ON EMPLEADO(tipo); 
+DROP INDEX prueba;
+INSERT INTO CLIENTE values(11, 'Esperanza', '10/12/2018', '11/12/2018', 'Tarjeta' , 1, 2,2);
+INSERT INTO SERVICIOADICIONAL values(13, 'Salon Reunion 4', 1, '10/12/2018', 1, 42983, null, 2);
+insert into habitacion (id, tipo, capacidad, comedorcocina, jacuzzi, minibar, television, cafetera, consumo, id_hotel, iniciomantenimiento, finmantenimiento, id_reserva, reserva, ocupado) values (11, 'Doble', 2, 'Y', 'N', 'Y', 'Y', 'Y', 9000, 1, null, null, 5, '25/03/2019', 'Y');
+
+--RFC11
+Select a.nombre as NombreServicio, Count(a.nombre) as NumeroDeUsos, to_number (to_char (a.fechaUso, 'w')) as semana, to_number (to_char (a.fechaUso, 'mm')) as mes
+From servicioadicional a
+where to_number (to_char (a.fechaUso, 'w')) = 1
+AND to_number (to_char (a.fechaUso, 'mm')) = 1
+group by nombre, fechauso
+order by Count(a.nombre) DESC
+fetch first row only; 
+
+Select a.nombre as NombreServicio, Count(a.nombre) as NumeroDeUsos, to_number (to_char (a.fechaUso, 'w')) as semana, to_number (to_char (a.fechaUso, 'mm')) as mes
+From servicioadicional a
+where to_number (to_char (a.fechaUso, 'w')) = 2
+AND to_number (to_char (a.fechaUso, 'mm')) = 1
+group by nombre, fechauso
+order by Count(a.nombre) DESC
+fetch first row only; 
+
+Select a.nombre as NombreServicio, Count(a.nombre) as NumeroDeUsos, to_number (to_char (a.fechaUso, 'w')) as semana, to_number (to_char (a.fechaUso, 'mm')) as mes
+From servicioadicional a
+where to_number (to_char (a.fechaUso, 'w')) = 1
+AND to_number (to_char (a.fechaUso, 'mm')) = 2
+group by nombre, fechauso
+order by Count(a.nombre) ASC
+fetch first row only; 
+
+Select a.nombre as NombreServicio, Count(a.nombre) as NumeroDeUsos, to_number (to_char (a.fechaUso, 'w')) as semana, to_number (to_char (a.fechaUso, 'mm')) as mes
+From servicioadicional a
+where to_number (to_char (a.fechaUso, 'w')) = 2
+AND to_number (to_char (a.fechaUso, 'mm')) = 2
+group by nombre, fechauso
+order by Count(a.nombre) ASC
+fetch first row only;
+
+Select count(a.id) as NumeroDeUsoDeHabitacion, a.id as numeroHabitacion
+From habitacion a inner join cliente c on a.id = c.id_habitacion
+where to_number (to_char (c.fechaentrada, 'w')) = 1
+AND to_number (to_char (c.fechaentrada, 'mm')) = 1
+group by a.id
+order by count (a.id) DESC
+fetch first row only; 
+
+Select count(a.id) as NumeroDeUsoDeHabitacion, a.id as numeroHabitacion
+From habitacion a inner join cliente c on a.id = c.id_habitacion
+where to_number (to_char (c.fechaentrada, 'w')) = 1
+AND to_number (to_char (c.fechaentrada, 'mm')) = 2
+group by a.id
+order by count (a.id) DESC
+fetch first row only; 
+
+Select count(a.id) as NumeroDeUsoDeHabitacion, a.id as numeroHabitacion
+From habitacion a inner join cliente c on a.id = c.id_habitacion
+where to_number (to_char (c.fechaentrada, 'w')) = 1
+AND to_number (to_char (c.fechaentrada, 'mm')) = 1
+group by a.id
+order by count (a.id) ASC
+fetch first row only; 
+
+Select count(a.id) as NumeroDeUsoDeHabitacion, a.id as numeroHabitacion
+From habitacion a inner join cliente c on a.id = c.id_habitacion
+where to_number (to_char (c.fechaentrada, 'w')) = 1
+AND to_number (to_char (c.fechaentrada, 'mm')) = 2
+group by a.id
+order by count (a.id) ASC
+fetch first row only;
+
+--RFC12
+
+SELECT DISTINCT a.nombre
+FROM(
+SELECT cliente.*
+FROM cliente
+WHERE to_number (to_char (cliente.fechaentrada, 'qy')) = 16
+)a
+INNER JOIN
+(SELECT cliente.*
+FROM cliente
+WHERE to_number (to_char (cliente.fechaentrada, 'qy')) = 26)   b
+on a.nombre = b.nombre
+INNER JOIN
+(SELECT cliente.*
+FROM cliente
+WHERE to_number (to_char (cliente.fechaentrada, 'qy')) = 36)   c
+on a.nombre = b.nombre
+INNER JOIN
+(SELECT cliente.*
+FROM cliente
+WHERE to_number (to_char (cliente.fechaentrada, 'qy')) = 46)   d
+on c.nombre = d.nombre;
+
+SELECT DISTINCT cliente.nombre
+FROM cliente, servicioAdicional
+WHERE cliente.id = servicioAdicional.id
+AND servicioAdicional.costo >400000;
+
+SELECT DISTINCT cliente.*
+FROM cliente, servicioAdicional
+WHERE cliente.id = servicioAdicional.id
+AND servicioadicional.duracion >3;
+
+
+--, cliente.*,to_number (to_char (servicioAdicional.fechaUso, 'mm')) as Trimestre
+
+CREATE INDEX nombre ON cliente(nombre); 
+
+
+
+TRUNCATE TABLE habitacion;
+Select*
+From empleado
+where tipo='Gerente'

@@ -1,0 +1,69 @@
+17:41:37,032 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error con la ejecucion de Query de SQL "UPDATE SALONREUNION SET RESERVADO = N WHERE ID = 2".
+ORA-00904: "N": identificador no válido
+
+17:45:08,315 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error con la ejecucion de Query de SQL "UPDATE SALONREUNION SET RESERVADO = 'N' WHERE ID = 1".
+ORA-00904: "RESERVADO": identificador no válido
+
+17:49:36,292 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error con la ejecucion de Query de SQL "UPDATE SALONREUNION SET ID_CLIENTE = 2, RESERVADO = 'N' WHERE ID = 1".
+ORA-00904: "RESERVADO": identificador no válido
+
+17:51:27,323 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error con la ejecucion de Query de SQL "UPDATE SALONREUNION SET ID_CLIENTE = 2, RESERVADO = 'N' WHERE ID = 1".
+ORA-00904: "RESERVADO": identificador no válido
+
+17:54:24,833 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error con la ejecucion de Query de SQL "UPDATE SALONREUNION SET ID_CLIENTE = 2, RESERVADO = 'N' WHERE ID = 1".
+ORA-00904: "RESERVADO": identificador no válido
+
+17:57:20,452 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error con la ejecucion de Query de SQL "UPDATE SALONREUNION SET RESERVADO = 'N' WHERE ID = 1".
+ORA-00904: "RESERVADO": identificador no válido
+
+17:57:34,351 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error con la ejecucion de Query de SQL "UPDATE SALONREUNION SET RESERVADO = 'N' WHERE ID = 1".
+ORA-00904: "RESERVADO": identificador no válido
+
+18:36:17,677 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : ORA-02391: exceeded simultaneous SESSIONS_PER_USER limit
+
+ORA-02391: exceeded simultaneous SESSIONS_PER_USER limit
+
+16:03:24,330 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+16:05:14,623 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+16:26:38,164 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+16:40:17,432 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error executing SQL query "UPDATE HABITACION SET ID_RESERVADO = null AND RESERVADO = null WHERE ID = 100".
+ORA-00933: SQL command not properly ended
+
+16:43:59,786 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error executing SQL query "UPDATE HABITACION SET ID_RESERVADO = null AND RESERVADO = null WHERE ID = 100".
+ORA-00933: SQL command not properly ended
+
+16:46:51,487 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error executing SQL query "UPDATE HABITACION SET ID_RESERVADO = null AND RESERVADO = null WHERE ID = 1".
+ORA-00933: SQL command not properly ended
+
+14:03:43,517 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+14:09:54,910 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+14:32:22,370 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+15:48:53,100 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.VOHabitacion" but it was impossible to create a new instance of this type. The result class needs a no-args constructor.
+
+15:52:57,885 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+15:57:28,862 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.VOHabitacion" but it was impossible to create a new instance of this type. The result class needs a no-args constructor.
+
+15:58:39,474 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.VOHabitacion" but it was impossible to create a new instance of this type. The result class needs a no-args constructor.
+
+18:02:41,191 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.VOHabitacion" but it was impossible to create a new instance of this type. The result class needs a no-args constructor.
+
+18:17:21,608 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+18:21:32,577 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+18:22:00,872 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Query needs to return objects of type "hotel.negocio.Habitacion" but it was impossible to set the field "COMEDORCOCINA" type "java.lang.String". The field should have either a public set/put method, or be public.
+
+18:23:28,389 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : Error executing SQL query "UPDATE HABITACION SET ID_RESERVADO = null AND RESERVADO = null WHERE ID = 1".
+ORA-00933: SQL command not properly ended
+
+18:23:35,149 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : [Ljava.lang.Object; cannot be cast to hotel.negocio.Habitacion
+
+18:25:40,526 (AWT-EventQueue-0) ERROR [hotel.persistencia.PersistenciaHotel] - Exception : [Ljava.lang.Object; cannot be cast to hotel.negocio.Habitacion
+
